@@ -1,0 +1,40 @@
+<!--
+-- Nom_Estado
+-- Descripcion
+-- Canciones
+-- Tema_Esc
+-- Artista_Esc
+-->
+
+{% extends 'base.html' %}{% block content %}
+<div class="p-3 mb-2 bg-success text-white">
+    <h1><center> MUSICA </center></h1>
+</div>
+<div class="container">
+{% for est in Todo_EstadoAnim%}
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                {{est.Nom_Estado}}
+            </button> 
+            
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                <p>Descripcion:  {{est.Descripcion}} </p>
+                <p>Canciones:  {{est.Canciones}} </p>
+                <p>Artista Mas Escuchado:  {{est.Artista_Esc}} </p>
+                <a href="{% url 'estado_animo_detalle' est.pk %}"> <p> Editar </p> </a>
+                
+            </div>
+        </div>
+        </div>
+    </div>
+    
+{% endfor %}
+
+<br>
+<a class="btn btn-primary btn-xs"  href="{% url 'estado_animo_nuevo'  %}"> Crear </a>
+</div>
+{% endblock content %}

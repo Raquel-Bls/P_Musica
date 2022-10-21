@@ -1,0 +1,29 @@
+{% extends 'base.html' %}{% block content %}
+<div class="p-3 mb-2 bg-success text-white">
+    <h1><center> MUSICA </center></h1>
+</div>
+<br>
+<div class="container">
+    <table class= "table table-bordered border-primary">
+        <tr class= "table-info">
+            <th> Nombre </th>
+            <th> Descripcion </th>
+            <th> Generos </th>
+            <th> Ultimo_lanzamiento </th>
+            <th> Popular_semana </th>
+        </tr>
+        <tr>
+            <td> {{Todo_Artista.Nombre}}</td>
+            <td> {{Todo_Artista.Descripcion}} </td>
+            <td> {{Todo_Artista.Generos}}</td>
+            <td> {{Todo_Artista.Ultimo_lanzamiento}}</td>
+            <td> {{Todo_Artista.Popular_semana}}</td>
+        </tr>
+    </table>
+    <br>
+    <div>
+        <a class="btn btn-primary btn-xs" href="{% url 'artista_editar' Todo_Artista.pk %}"> Editar </a>
+        <a class="btn btn-primary btn-xs" href="{% url 'artista_eliminar' Todo_Artista.pk %}"> Eliminar </a>
+    </div>
+</div>
+{% endblock content %}

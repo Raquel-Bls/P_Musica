@@ -1,0 +1,37 @@
+<!--
+    Nombre = models.CharField(max_length=10)
+    Descripcion = models.TextField(max_length=100)
+    Generos = models.TextField(max_length=30)
+    Ultimo_lanzamiento = models.TextField(max_length=30)
+    Popular_semana
+-->
+
+{% extends 'base.html' %}  {% block content %}
+<div class="p-3 mb-2 bg-success text-white">
+    <h1><center> MUSICA </center></h1>
+</div>
+<br />
+<div class="container">
+  {% for art in Todo_Artista%}
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://www.duna.cl/media/2020/10/m%C3%BAsica-25.jpg" class="card-img-top" alt="{{art.Nombre}}">
+          <div class="card-body">
+            <h5 class="card-title">{{art.Nombre}}</h5>
+            <p class="card-text">{{art.Descripcion}}</p>
+            <p class="card-text">Generos: {{art.Generos}}</p>
+            <p class="card-text">Ultimo Lanzamiento: <br>{{art.Ultimo_lanzamiento}}</p>
+            <p class="card-text">Popular De La Semana: <br>{{art.Popular_semana}}</p>
+          </div>
+          <a class="btn btn-primary btn-xs" href="{% url 'artista_detalle' art.pk %}"> Editar </a>
+        </div>
+      </div>
+  </div>
+
+  {% endfor %}
+
+  <br>
+  <a class="btn btn-primary btn-xs"  href="{% url 'artista_nuevo'  %}"> Crear </a>
+</div>
+{% endblock content %}

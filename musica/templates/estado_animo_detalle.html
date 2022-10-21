@@ -1,0 +1,27 @@
+{% extends 'base.html' %}{% block content %}
+<div class="p-3 mb-2 bg-success text-white">
+    <h1><center> MUSICA </center></h1>
+</div>
+<div class="container">
+    <table class= "table table-bordered border-primary">
+        <tr class= "table-info">
+            <th> Nom_Estado </th>
+            <th> Descripcion </th>
+            <th> Canciones </th>
+            <th> Artista_Esc </th>
+        </tr>
+        <tr>
+            <td> {{Todo_EstadoAnim.Nom_Estado}}</td>
+            <td> {{Todo_EstadoAnim.Descripcion}} </td>
+            <td> {{Todo_EstadoAnim.Canciones}}</td>
+            <td> {{Todo_EstadoAnim.Artista_Esc}}</td>
+        </tr>
+    </table>
+
+    <br>
+    <div>
+        <a class="btn btn-primary btn-xs" href="{% url 'estado_animo_editar' Todo_EstadoAnim.pk %}"> Editar </a>
+        <a class="btn btn-primary btn-xs" href="{% url 'estado_animo_eliminar' Todo_EstadoAnim.pk %}"> Eliminar </a>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}{% block content%}
+<div class="p-3 mb-2 bg-success text-white">
+    <h1><center> MUSICA </center></h1>
+</div>
+<br />
+<form action="" method="post" class="container" >{% csrf_token %}
+   <br>
+   <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <label for="Generos "> Generos </label>
+        </div>
+        <div class="col-auto">
+        {{ form.Generos }}
+        </div>
+    </div>
+    <br>
+   <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <label for="Ultimo_lanzamiento "> Ultimo_lanzamiento </label>
+        </div>
+        <div class="col-auto">
+        {{ form.Ultimo_lanzamiento }}
+        </div>
+    </div>
+    <br>
+    <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <label for="Popular_semana "> Popular_semana </label>
+        </div>
+        <div class="col-auto">
+        {{ form.Popular_semana }}
+        </div>
+    </div>
+    <br>
+    <input class="btn btn-primary btn-xs" type="submit" value="Editar" />
+</form>
+
+{% endblock content %}

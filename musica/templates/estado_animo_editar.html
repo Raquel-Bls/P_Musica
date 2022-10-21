@@ -1,0 +1,29 @@
+{% extends 'base.html' %}{% block content%}
+<div class="p-3 mb-2 bg-success text-white">
+    <h1><center> MUSICA </center></h1>
+</div>
+<br />
+<form action="" method="post" class="container">{% csrf_token %}
+   <br>
+   <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <label for="Canciones "> Canciones </label>
+        </div>
+        <div class="col-auto">
+        {{ form.Canciones }}
+        </div>
+    </div>
+    <br>
+   <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <label for="Artista_Esc "> Artista_Esc </label>
+        </div>
+        <div class="col-auto">
+        {{ form.Artista_Esc }}
+        </div>
+    </div>
+    <br>
+    <input class="btn btn-primary btn-xs" type="submit" value="Editar" />
+</form>
+
+{% endblock content %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %} {% block content %}
+<div class="p-3 mb-2 bg-success text-white">
+    <h1><center> MUSICA </center></h1>
+</div>
+<br />
+
+<form action="" method="post" class="container">{% csrf_token %}
+    <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <label for="Nom_Estado "> Nom_Estado </label>
+        </div>
+        <div class="col-auto">
+            <input type="text" name="Nom_Estado">
+        </div>
+    </div>
+   <br>
+   <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <label for="Descripcion "> Descripcion </label>
+        </div>
+        <div class="col-auto">
+            <input type="text" name="Descripcion">
+        </div>
+    </div>
+   <br>
+   <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <label for="Canciones "> Canciones </label>
+        </div>
+        <div class="col-auto">
+            <input type="text" name="Canciones">
+        </div>
+    </div>
+   <br>
+   <div class="row g-3 align-items-center">
+        <div class="col-auto">
+            <label for="Artista_Esc "> Artista_Esc </label>
+        </div>
+        <div class="col-auto">
+            <input type="text" name="Artista_Esc">
+        </div>
+    </div>
+   
+   <br>
+    <input class="btn btn-primary btn-xs" type="submit" value="Guardar"/>
+
+</form>
+
+{% endblock content %}
